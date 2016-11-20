@@ -8,3 +8,9 @@
 .inline-img-right {
     float: right;
 }
+
+.img-small {
+    height: auto;
+    max-width: 5%;
+    width: 5%;
+}
