@@ -1,15 +1,32 @@
-var divs = ["#home", "#about", "#coop", "#coopgoals", "#coopconc", "#uog", "#uoggoals", "#uogconc", "#brock", "#brockgoals", "#brockconc", "#acknowledgments", "#contact"]; 
+var divs = ["home", "about", "coop", "coopgoals", "coopconc", "uog", "uoggoals", "uogconc", "brock", "brockgoals", "brockconc", "acknowledgments", "contact"]; 
 
 function showDiv(name)
 {
   for (i = 0; i < divs.length; i++) {
-    if("#" + name === divs[i])
+    if(name === divs[i])
     {
-      $(divs[i]).fadeIn();
+      $("#" + divs[i]).fadeIn();
+      if(i >=2 && i <= 4)
+      {
+        $("#list-" + divs[2]).addClass("active");
+      }
+      else if(i >= 5 && i <= 7)
+      {
+        $("#list-" + divs[5]).addClass("active");
+      }
+      else if(i >= 8 && i <= 10)
+      {
+        $("#list-" + divs[8]).addClass("active");
+      }
+      else
+      {
+        $("#list-" + divs[i]).addClass("active");
+      }
     }
     else
     { 
-      $(divs[i]).hide();
+      $("#" + divs[i]).hide();
+      $("#list-" + divs[i]).removeClass("active");
     }
   }
 }
