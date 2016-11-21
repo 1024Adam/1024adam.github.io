@@ -5,7 +5,7 @@ function showDiv(name)
   for (i = 0; i < divs.length; i++) {
     if("#" + name === divs[i])
     {
-      $(divs[i]).show("slow");
+      $(divs[i]).fadeIn();
     }
     else
     { 
