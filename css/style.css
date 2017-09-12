@@ -1,3 +1,7 @@
+html,body {
+  min-height: 100vh
+}
+
 .block-blue {
   background-color: #dae8f4;
 }
