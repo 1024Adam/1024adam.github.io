@@ -1,7 +1,7 @@
-var divs = ["home", "about", "coop", "coopgoals", "coopconc", "uog", "uoggoals", "uogconc", "brock", "brockgoals", "brockconc", "acknowledgments", "contact"]; 
-
 function showDiv(name)
 {
+  var divs = ["home", "about", "coop", "coopgoals", "coopconc", "uog", "uoggoals", "uogconc", "brock", "brockgoals", "brockconc", "acknowledgments", "contact"]; 
+ 
   for (var i = 0; i < divs.length; i++) {
     if(name === divs[i])
     {
