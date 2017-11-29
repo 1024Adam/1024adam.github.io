@@ -31,11 +31,6 @@ function showDiv(name)
   }
 }
 
-$(document).ready(function() {
-  showDiv("home");
-  $(this).scrollTop(0);
-});
-
 $("#menu-adam").click(function() {
   showDiv("home");
 });
