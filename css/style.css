@@ -19,8 +19,8 @@ html,body {
 
 .img-small {
   height: auto;
-  max-width: 100%;
-  width: 100%;
+  max-width: 10%;
+  width: 10%;
 }
 
 .hidden {
