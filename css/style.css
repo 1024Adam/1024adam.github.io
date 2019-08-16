@@ -6,21 +6,10 @@ html,body {
   background-color: #dae8f4;
 }
 
-.inline-img {
-  display: block;
-  height: auto;
-  max-width: 92%;
-  width: 92%;
-}
-
-.inline-img-right {
-  float: right;
-}
-
 .img-small {
   height: auto;
-  max-width: 10%;
-  width: 10%;
+  max-width: 3%;
+  width: 3%;
 }
 
 .hidden {
