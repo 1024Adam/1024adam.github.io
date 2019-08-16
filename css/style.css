@@ -1,7 +1,7 @@
 html,body {
   min-height: 100vh;
   background-color: #333333;
-  foreground-color: #ffffff;
+  color: #ffffff;
 }
 
 .block-blue {
