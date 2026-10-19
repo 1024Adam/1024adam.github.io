@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+.npm/
+
+# Build Output
+dist/
+
+# Astro Cache
+.astro/
+
+# Environment variables
+.env
+.env.production
+
+# IDE / OS metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Design / Agents
+docs/
+.github/agents/

@@ -1,0 +1,51 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const allProjects = await getCollection('projects');
+const spotlightProjects = allProjects.sort((a, b) => a.data.order - b.data.order);
+---
+
+<PageLayout
+  title="Project Spotlight | Adam Reid"
+  description="Spotlight engineering projects and technical systems designed and built by Adam Reid."
+  headline="Project Spotlight"
+  subheadline="Selected engineering highlights showcasing systems programming, algorithmic design, and software craftsmanship."
+>
+  <div class="space-y-10">
+    <div class="flex flex-col gap-8">
+      {spotlightProjects.map((project) => (
+        <ProjectCard
+          title={project.data.title}
+          description={project.data.description}
+          highlights={project.data.highlights}
+          technologies={project.data.technologies}
+          githubUrl={project.data.githubUrl}
+          liveUrl={project.data.liveUrl}
+          date={project.data.date}
+        />
+      ))}
+    </div>
+
+    <!-- GitHub Repositories Banner -->
+    <div class="p-6 rounded-lg border border-[#30363D] bg-[#161B22] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="space-y-1 text-center sm:text-left">
+        <h3 class="text-sm font-semibold text-[#F0F6FC]">
+          Looking for all code repositories?
+        </h3>
+        <p class="text-xs sm:text-sm text-[#8B949E]">
+          Explore smaller experiments, utilities, ciphers, and contributions on GitHub.
+        </p>
+      </div>
+      <a
+        href="https://github.com/1024Adam?tab=repositories"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="shrink-0 inline-flex items-center px-4 py-2 rounded-md bg-[#21262D] text-[#F0F6FC] border border-[#30363D] hover:border-[#58A6FF] hover:text-[#58A6FF] text-xs sm:text-sm font-mono font-medium transition-all"
+      >
+        <span>GitHub Repositories &rarr;</span>
+      </a>
+    </div>
+  </div>
+</PageLayout>

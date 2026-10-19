@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="404 - Page Not Found | Adam Reid"
+  description="The requested page could not be found."
+>
+  <div class="py-20 text-center space-y-6">
+    <p class="text-sm font-mono text-[#58A6FF] uppercase tracking-widest">
+      404 Error
+    </p>
+    <h1 class="text-4xl font-bold tracking-tight text-[#F0F6FC]">
+      Page Not Found
+    </h1>
+    <p class="text-base text-[#8B949E] max-w-md mx-auto leading-relaxed">
+      The page you were looking for doesn't exist or has been moved to a new route.
+    </p>
+    <div class="pt-4">
+      <a
+        href="/"
+        class="inline-flex items-center px-4 py-2 rounded-md bg-[#21262D] text-[#F0F6FC] border border-[#30363D] hover:border-[#58A6FF] hover:text-[#58A6FF] text-sm font-medium transition-all"
+      >
+        &larr; Return to Home
+      </a>
+    </div>
+  </div>
+</BaseLayout>

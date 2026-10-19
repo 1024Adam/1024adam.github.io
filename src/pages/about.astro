@@ -1,0 +1,151 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const skills = {
+  languages: [
+    'Python',
+    'C#',
+    'C',
+    'Java',
+    'SQL',
+    'JavaScript',
+  ],
+  technologies: [
+    'Git',
+    'GitHub Actions',
+    'Docker',
+    'Linux',
+    'Selenium',
+    '.NET',
+  ],
+  focusAreas: [
+    'Backend Systems',
+    'Test Automation',
+    'Algorithms & Logic',
+    'Data Structures',
+  ],
+};
+---
+
+<PageLayout
+  title="About | Adam Reid"
+  description="Background, technical toolbox, and engineering focus of Adam Reid."
+  headline="About & Technical Focus"
+  subheadline="Software engineer focused on systems engineering, backend infrastructure, and reliable developer tooling."
+>
+  <div class="space-y-12">
+    <!-- Introduction Section -->
+    <section class="space-y-4 text-base text-[#8B949E] leading-relaxed">
+      <p>
+        I am a software engineer based in Ontario, Canada, with a background in Computer Science and Mathematics from the University of Guelph. My professional focus centers on robust backend development, reliable software architecture, and comprehensive quality engineering & test automation.
+      </p>
+      <p>
+        Throughout my career across enterprise systems, industrial operations, and modern cloud tooling, I have engineered automated testing pipelines, migrated critical service infrastructures, and built clean software solutions that prioritize correctness, maintainability, and deterministic performance.
+      </p>
+    </section>
+
+    <!-- Technical Toolbox -->
+    <section class="space-y-6">
+      <h2 class="text-xl font-bold text-[#F0F6FC]">
+        Technical Toolbox
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        <div class="p-5 rounded-lg border border-[#30363D] bg-[#161B22] flex flex-col space-y-4">
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-[#58A6FF] font-mono">
+            Languages
+          </h3>
+          <div class="grid grid-cols-2 gap-2 content-start">
+            {skills.languages.map((lang) => (
+              <span class="text-xs font-mono text-[#F0F6FC] bg-[#21262D] px-2.5 py-1.5 rounded border border-[#30363D] text-center flex items-center justify-center min-h-[38px]">
+                {lang}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div class="p-5 rounded-lg border border-[#30363D] bg-[#161B22] flex flex-col space-y-4">
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-[#58A6FF] font-mono">
+            Tools & Infra
+          </h3>
+          <div class="grid grid-cols-2 gap-2 content-start">
+            {skills.technologies.map((tool) => (
+              <span class="text-xs font-mono text-[#F0F6FC] bg-[#21262D] px-2.5 py-1.5 rounded border border-[#30363D] text-center flex items-center justify-center min-h-[38px]">
+                {tool}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div class="p-5 rounded-lg border border-[#30363D] bg-[#161B22] flex flex-col space-y-4">
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-[#58A6FF] font-mono">
+            Core Domains
+          </h3>
+          <div class="flex flex-col gap-2 content-start">
+            {skills.focusAreas.map((focus) => (
+              <span class="text-xs font-mono text-[#F0F6FC] bg-[#21262D] px-2.5 py-1.5 rounded border border-[#30363D] text-center flex items-center justify-center min-h-[38px]">
+                {focus}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LinkedIn Pointer Banner -->
+    <section class="p-6 rounded-lg border border-[#30363D] bg-[#161B22] space-y-3">
+      <h2 class="text-base font-semibold text-[#F0F6FC]">
+        Employment & Education History
+      </h2>
+      <p class="text-sm text-[#8B949E] leading-relaxed">
+        To avoid stale resumes and duplicate records, my comprehensive employment history, company tenures, recommendations, and university education (University of Guelph) are maintained directly on LinkedIn.
+      </p>
+      <div class="pt-2">
+        <a
+          href="https://www.linkedin.com/in/adam-reid-963515ab"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center px-4 py-2 rounded-md bg-[#21262D] text-[#F0F6FC] border border-[#30363D] hover:border-[#58A6FF] hover:text-[#58A6FF] text-sm font-medium transition-all"
+        >
+          View Full Profile on LinkedIn &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Connect -->
+    <section class="space-y-4">
+      <h2 class="text-xl font-bold text-[#F0F6FC]">
+        Connect
+      </h2>
+      <p class="text-sm text-[#8B949E] leading-relaxed">
+        Feel free to reach out for engineering inquiries, collaboration, or software discussions.
+      </p>
+      <div class="flex flex-wrap gap-4 text-sm font-medium">
+        <a
+          href="mailto:adamjreid10@gmail.com"
+          class="inline-flex items-center text-[#58A6FF] hover:underline"
+        >
+          adamjreid10@gmail.com &rarr;
+        </a>
+        <span class="text-[#30363D]">&middot;</span>
+        <a
+          href="https://github.com/1024Adam"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center text-[#58A6FF] hover:underline"
+        >
+          GitHub &rarr;
+        </a>
+        <span class="text-[#30363D]">&middot;</span>
+        <a
+          href="https://www.linkedin.com/in/adam-reid-963515ab"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center text-[#58A6FF] hover:underline"
+        >
+          LinkedIn &rarr;
+        </a>
+      </div>
+    </section>
+  </div>
+</PageLayout>

@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #0D1117;
+  --color-surface: #161B22;
+  --color-elevated: #21262D;
+  --color-border-subtle: #30363D;
+  --color-border-active: #58A6FF;
+  --color-text-primary: #F0F6FC;
+  --color-text-secondary: #8B949E;
+  --color-text-muted: #6E7681;
+  --color-accent-brand: #58A6FF;
+  --color-accent-glow: rgba(88, 166, 255, 0.12);
+}
+
+:root {
+  color-scheme: dark;
+  --bg-canvas: #0D1117;
+  --bg-surface: #161B22;
+  --bg-elevated: #21262D;
+  --border-subtle: #30363D;
+  --border-active: #58A6FF;
+  --text-primary: #F0F6FC;
+  --text-secondary: #8B949E;
+  --text-muted: #6E7681;
+  --accent-brand: #58A6FF;
+  --accent-glow: rgba(88, 166, 255, 0.12);
+}
+
+html {
+  background-color: #0D1117;
+  color: #F0F6FC;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.7;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: #21262D #0D1117;
+  overscroll-behavior-y: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #0D1117;
+  overscroll-behavior-y: none;
+}
+
+code, pre, .font-mono {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Card hover glow accent */
+.card-glow:hover {
+  box-shadow: 0 0 24px var(--accent-glow);
+}
+
+/* Sleek minimalist dark scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #21262D;
+  border-radius: 5px;
+  border: 2px solid #0D1117;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #30363D;
+}
+
+/* Subtle page content arrival animation */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: fadeInSlide 220ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Keyboard focus rings */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid #58A6FF;
+  outline-offset: 2px;
+}
+

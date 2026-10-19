@@ -1,0 +1,35 @@
+{
+  "name": "1024adam.github.io",
+  "version": "2.0.0",
+  "description": "Adam Reid - Personal Website & Developer Portfolio",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1024Adam/1024adam.github.io.git"
+  },
+  "keywords": [
+    "portfolio",
+    "developer",
+    "astro",
+    "tailwindcss"
+  ],
+  "author": "Adam Reid",
+  "license": "MIT",
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.4.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4"
+  }
+}

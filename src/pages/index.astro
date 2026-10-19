@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const allProjects = await getCollection('projects');
+const featuredProjects = allProjects
+  .filter((p) => p.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout>
+  <div class="space-y-16">
+    <!-- Hero Section -->
+    <section class="space-y-6 pt-4 pb-8 border-b border-[#30363D]">
+      <div class="space-y-3">
+        <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-[#F0F6FC]">
+          Adam Reid
+        </h1>
+        <p class="text-xl text-[#58A6FF] font-medium">
+          Software Engineer
+        </p>
+      </div>
+
+      <p class="text-lg text-[#8B949E] leading-relaxed max-w-2xl">
+        Software engineer specializing in backend engineering, automated testing pipelines, and robust systems architecture. Focused on high-reliability software, scalable workflows, and clean code.
+      </p>
+
+      <div class="flex flex-wrap gap-4 pt-2 text-sm font-medium">
+        <a
+          href="https://github.com/1024Adam"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center px-4 py-2 rounded-md bg-[#21262D] text-[#F0F6FC] border border-[#30363D] hover:border-[#58A6FF] hover:text-[#58A6FF] transition-all"
+        >
+          GitHub &rarr;
+        </a>
+        <a
+          href="https://www.linkedin.com/in/adam-reid-963515ab"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center px-4 py-2 rounded-md bg-[#21262D] text-[#F0F6FC] border border-[#30363D] hover:border-[#58A6FF] hover:text-[#58A6FF] transition-all"
+        >
+          LinkedIn &rarr;
+        </a>
+        <a
+          href="mailto:adamjreid10@gmail.com"
+          class="inline-flex items-center px-4 py-2 rounded-md bg-[#21262D] text-[#F0F6FC] border border-[#30363D] hover:border-[#58A6FF] hover:text-[#58A6FF] transition-all"
+        >
+          Email &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Project Spotlight -->
+    <section class="space-y-6">
+      <div class="flex items-center justify-between">
+        <h2 class="text-sm font-bold uppercase tracking-wider text-[#F0F6FC]">
+          Project Spotlight
+        </h2>
+        <a
+          href="/projects"
+          class="text-sm font-medium text-[#58A6FF] hover:underline"
+        >
+          View spotlights &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {featuredProjects.map((project) => (
+          <ProjectCard
+            title={project.data.title}
+            description={project.data.description}
+            technologies={project.data.technologies}
+            githubUrl={project.data.githubUrl}
+            liveUrl={project.data.liveUrl}
+            date={project.data.date}
+          />
+        ))}
+      </div>
+    </section>
+
+    <!-- Career & Credentials Banner (No LinkedIn Duplication) -->
+    <section class="p-6 rounded-lg border border-[#30363D] bg-[#161B22] space-y-3">
+      <h2 class="text-sm font-bold uppercase tracking-wider text-[#F0F6FC]">
+        Career & Credentials
+      </h2>
+      <p class="text-sm text-[#8B949E] leading-relaxed">
+        For full employment history, education, and credentials, visit my LinkedIn profile:
+      </p>
+      <div class="pt-1">
+        <a
+          href="https://www.linkedin.com/in/adam-reid-963515ab"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center text-sm font-mono text-[#58A6FF] hover:underline"
+        >
+          <span>linkedin.com/in/adam-reid-963515ab &rarr;</span>
+        </a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

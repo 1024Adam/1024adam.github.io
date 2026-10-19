@@ -1,0 +1,30 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  headline?: string;
+  subheadline?: string;
+}
+
+const { title, description, headline, subheadline } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="space-y-8">
+    {headline && (
+      <header class="space-y-2 border-b border-[#30363D] pb-6">
+        <h1 class="text-3xl font-bold tracking-tight text-[#F0F6FC]">
+          {headline}
+        </h1>
+        {subheadline && (
+          <p class="text-base text-[#8B949E] leading-relaxed">
+            {subheadline}
+          </p>
+        )}
+      </header>
+    )}
+    <slot />
+  </div>
+</BaseLayout>

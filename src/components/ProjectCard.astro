@@ -1,0 +1,79 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  highlights?: string[];
+  technologies: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+  date: string;
+}
+
+const { title, description, highlights, technologies, githubUrl, liveUrl, date } = Astro.props;
+---
+
+<article class="p-6 sm:p-7 rounded-lg border border-[#30363D] bg-[#161B22] hover:border-[#58A6FF] transition-all duration-200 group flex flex-col justify-between card-glow">
+  <div class="space-y-4">
+    <div class="flex items-baseline justify-between gap-3">
+      <h3 class="text-xl font-semibold text-[#F0F6FC] group-hover:text-[#58A6FF] transition-colors">
+        {title}
+      </h3>
+      <span class="text-xs font-mono text-[#8B949E] px-2.5 py-0.5 rounded bg-[#21262D] border border-[#30363D]">
+        {date}
+      </span>
+    </div>
+
+    <p class="text-sm sm:text-base text-[#8B949E] leading-relaxed">
+      {description}
+    </p>
+
+    {highlights && highlights.length > 0 && (
+      <div class="pt-2">
+        <h4 class="text-xs font-mono uppercase tracking-wider text-[#58A6FF] mb-2 font-medium">
+          Key Highlights & Architecture
+        </h4>
+        <ul class="space-y-1.5 text-xs sm:text-sm text-[#8B949E]">
+          {highlights.map((item) => (
+            <li class="flex items-start gap-2">
+              <span class="text-[#58A6FF] font-mono select-none">&bull;</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </div>
+
+  <div class="pt-6">
+    <div class="flex flex-wrap gap-1.5 mb-4">
+      {technologies.map((tech) => (
+        <span class="text-xs font-mono text-[#58A6FF] bg-[#21262D] px-2.5 py-1 rounded border border-[#30363D]">
+          {tech}
+        </span>
+      ))}
+    </div>
+
+    <div class="flex items-center space-x-4 pt-3 border-t border-[#30363D]/60 text-xs sm:text-sm font-medium">
+      {githubUrl && (
+        <a
+          href={githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center text-[#8B949E] hover:text-[#58A6FF] transition-colors font-mono"
+        >
+          <span>GitHub Repo &rarr;</span>
+        </a>
+      )}
+      {liveUrl && (
+        <a
+          href={liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center text-[#8B949E] hover:text-[#58A6FF] transition-colors font-mono"
+        >
+          <span>Live Demo &rarr;</span>
+        </a>
+      )}
+    </div>
+  </div>
+</article>
