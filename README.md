@@ -30,9 +30,3 @@ npm run build
 # Preview build output
 npm run preview
 ```
-
-## Documentation
-
-- [Architecture Blueprint](docs/ARCHITECTURE.md)
-- [Design System & Wireframes](docs/DESIGN.md)
-
